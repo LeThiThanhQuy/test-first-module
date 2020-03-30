@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        let x = 0;
+        let testScoreArr = Array();
+
+        function add_element_to_array() {
+            testScoreArr[x] = document.getElementById("txtValue").value;
+            alert("Element: " + testScoreArr[x] + " Added at index " + x);
+            x++;
+            document.getElementById("txtValue").value = "";
+        }
+        function max_in_array() {
+            let e = "<hr>";
+            let max = testScoreArr[i];
+            for ( let i = 0; i < testScoreArr.length; i++) {
+                if ( testScoreArr[i] >max) {
+                    max = testScoreArr[i];
+                }
+                e = "Element largest in the array is " + testScoreArr[i] + " at index " + i;
+            }
+            document.getElementById("max").innerHTML = e;
+        }
+
+
+    </script>
+</head>
+<body>
+<input type="text" id="txtValue">
+<input type="button" value="Add" onclick="add_element_to_array();">
+<input type="button" value="Max in array" onclick="max_in_array();">
+
+<div id="max"></div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="data"></div>
+
+<input type="button" value="Check" onclick="compare()">
+<div id="result"></div>
+<script>
+    let arr = [12, 23, 10, 8, 7, 1, 2, -5, 4, 0];
+    let str = "";
+    for (let i = 0; i < arr.length; i++) {
+        str +=  arr[i] + ", ";
+    }
+    document.getElementById("data").innerHTML = str;
+
+    function compare() {
+        let myNumber = +prompt("Enter your number: ");
+        let newArr = "";
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === myNumber) {
+                document.getElementById("result").innerHTML = myNumber + " is in the array, at index: " + i;
+                newArr += arr.splice(i,1);
+            }else {
+                document.getElementById("result").innerHTML = myNumber + " is not in the array ";
+                return arr;
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
